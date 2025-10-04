@@ -1,0 +1,65 @@
+# Adversarial Attack Generator - Configuration File
+# This file contains default configuration settings for the application
+
+# Model Configuration
+model:
+  model_type: "modern"  # "modern" or "simple"
+  num_classes: 10
+  dropout_rate: 0.2
+  learning_rate: 0.001
+  batch_size: 64
+  num_epochs: 10
+  weight_decay: 0.0001
+  scheduler_step_size: 7
+  scheduler_gamma: 0.1
+
+# Attack Configuration
+attack:
+  # FGSM Attack
+  fgsm_epsilon: 0.25
+  
+  # PGD Attack
+  pgd_epsilon: 0.25
+  pgd_alpha: 0.01
+  pgd_num_iter: 40
+  
+  # BIM Attack
+  bim_epsilon: 0.25
+  bim_alpha: 0.01
+  bim_num_iter: 10
+  
+  # C&W Attack
+  cw_c: 1.0
+  cw_kappa: 0.0
+  cw_max_iter: 1000
+  cw_lr: 0.01
+  
+  # DeepFool Attack
+  deepfool_max_iter: 50
+  deepfool_overshoot: 0.02
+
+# UI Configuration
+ui:
+  page_title: "Adversarial Attack Generator"
+  page_icon: "🎯"
+  layout: "wide"
+  theme: "light"
+  max_upload_size: 10  # MB
+  supported_formats:
+    - "png"
+    - "jpg"
+    - "jpeg"
+
+# Database Configuration
+database:
+  db_path: "adversarial_attacks.db"
+  backup_interval: 24  # hours
+  max_records: 10000
+  cleanup_old_records: true
+
+# General Settings
+device: "auto"  # "auto", "cpu", "cuda"
+data_dir: "./data"
+checkpoint_dir: "./checkpoints"
+log_level: "INFO"
+random_seed: 42

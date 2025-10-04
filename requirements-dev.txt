@@ -1,0 +1,22 @@
+# Development requirements (additional to requirements.txt)
+-r requirements.txt
+
+# Additional development tools
+pre-commit>=2.20.0
+isort>=5.10.0
+bandit>=1.7.0
+safety>=2.3.0
+
+# Documentation
+sphinx>=5.0.0
+sphinx-rtd-theme>=1.0.0
+myst-parser>=0.18.0
+
+# Performance profiling
+memory-profiler>=0.60.0
+line-profiler>=4.0.0
+
+# Code quality
+pylint>=2.15.0
+radon>=5.1.0
+xenon>=0.8.0
